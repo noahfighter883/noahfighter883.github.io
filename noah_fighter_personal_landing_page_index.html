@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Noah Fighter — Portfolio</title>
+  <meta name="description" content="Personal landing page linking resume, GitHub, and LinkedIn." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b0f17;
+      --card: #101624;
+      --text: #e6eaf2;
+      --muted:#9aa3b2;
+      --brand:#5eead4; /* teal-300 */
+      --brand-contrast:#0f766e;
+      --ring: rgba(94,234,212,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background: radial-gradient(1200px 800px at 80% -10%, #1a2440 0%, transparent 60%),
+                 radial-gradient(900px 600px at -10% 20%, #06202f 0%, transparent 55%),
+                 var(--bg);
+      line-height:1.6;
+    }
+    .wrap{max-width:1000px;margin:0 auto;padding:48px 20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{
+      display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--text)
+    }
+    .avatar{
+      width:56px;height:56px;border-radius:14px;display:grid;place-items:center;font-weight:800;font-size:22px;
+      background:linear-gradient(135deg,#1f2937,#0ea5e9);
+      box-shadow:0 8px 30px rgba(14,165,233,.25);
+    }
+    .name{font-weight:800;font-size:20px}
+    .tag{color:var(--muted);font-size:14px;margin-top:-4px}
+
+    .card{
+      margin-top:36px;background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:28px 24px;
+      box-shadow:0 10px 35px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.05);
+      backdrop-filter: blur(6px);
+    }
+    h1{font-size:34px;line-height:1.2;margin:0 0 10px;font-weight:800}
+    p.lead{color:var(--muted);margin:0 0 22px;max-width:70ch}
+
+    .buttons{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{
+      --pad: 12px 16px;
+      display:inline-flex;align-items:center;gap:10px;padding:var(--pad);
+      color:#0b1420;background:var(--brand);border:1px solid rgba(255,255,255,.1);
+      border-radius:12px;font-weight:700;text-decoration:none;box-shadow:0 6px 20px var(--ring);
+      transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+    }
+    .btn:hover{transform:translateY(-1px);box-shadow:0 10px 26px var(--ring)}
+    .btn.secondary{background:#111827;color:var(--text);border-color:#223047}
+    .btn.ghost{background:transparent;color:var(--text);border-color:#303b53}
+
+    .links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px}
+    .linkcard{
+      background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px;
+      display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);
+      transition:transform .12s ease, border-color .12s ease;
+    }
+    .linkcard:hover{transform:translateY(-2px);border-color:rgba(94,234,212,.45)}
+    .linkicon{width:36px;height:36px;border-radius:9px;display:grid;place-items:center;background:#0b1220}
+    .linkmeta small{color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;margin-top:30px}
+    .list{margin:0;padding-left:18px;color:var(--muted)}
+    .list li{margin:6px 0}
+
+    footer{margin-top:36px;color:var(--muted);font-size:14px}
+
+    @media (max-width: 780px){
+      .grid{grid-template-columns:1fr}
+      .links{grid-template-columns:1fr}
+      .avatar{width:48px;height:48px;border-radius:12px;font-size:18px}
+      h1{font-size:28px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="logo" href="#">
+        <div class="avatar" aria-hidden="true">NF</div>
+        <div>
+          <div class="name">Noah Fighter</div>
+          <div class="tag">Software & Sports Analytics</div>
+        </div>
+      </a>
+      <nav class="buttons">
+        <!-- Replace href with your real links -->
+        <a class="btn ghost" href="#projects">Projects</a>
+        <a class="btn secondary" href="resume/Noah_Fighter_Resume.pdf" download>Download Résumé</a>
+      </nav>
+    </header>
+
+    <section class="card" id="hero">
+      <h1>Building data‑driven sports tools & clean, efficient software.</h1>
+      <p class="lead">I’m a CS student (Skidmore ’27) focused on sports analytics, modeling, and practical engineering. Here are quick links to my résumé, GitHub, and LinkedIn.</p>
+      <div class="links">
+        <a class="linkcard" href="resume/Noah_Fighter_Resume.pdf" target="_blank" rel="noopener">
+          <div class="linkicon">📄</div>
+          <div class="linkmeta">
+            <div><strong>Résumé</strong></div>
+            <small>View / download PDF</small>
+          </div>
+        </a>
+        <a class="linkcard" href="https://github.com/your-github" target="_blank" rel="noopener">
+          <div class="linkicon">💻</div>
+          <div class="linkmeta">
+            <div><strong>GitHub</strong></div>
+            <small>Repositories & code samples</small>
+          </div>
+        </a>
+        <a class="linkcard" href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noopener">
+          <div class="linkicon">🔗</div>
+          <div class="linkmeta">
+            <div><strong>LinkedIn</strong></div>
+            <small>Experience & updates</small>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="grid" id="projects">
+      <div class="card">
+        <h2 style="margin:0 0 8px">Highlighted Projects</h2>
+        <ul class="list">
+          <li><strong>NBA Assists Predictor (C):</strong> projects assists using sportsbook lines, last‑5 potential assists, pace, and team context.</li>
+          <li><strong>NBA Points Model (C):</strong> blends betting lines, season averages, pace, and defense vs position.</li>
+          <li><strong>NFL Receiver Projections (Python):</strong> merges sportsbook lines with game script, weather, and defensive matchups.</li>
+          <li><strong>Blackjack (Java):</strong> console game supporting splits, doubles, soft‑17 dealer logic, and bankroll management.</li>
+          <li><strong>CBB Predictor (Java):</strong> win‑probability model using NET, SOR, adjusted efficiencies, and quadrant records.</li>
+        </ul>
+      </div>
+      <aside class="card">
+        <h2 style="margin:0 0 8px">Contact</h2>
+        <p class="lead" style="margin:0 0 12px">Open to internships in software engineering & sports analytics.</p>
+        <a class="btn" style="--pad:10px 14px" href="mailto:your.email@domain.com">Email Me</a>
+        <div style="height:12px"></div>
+        <a class="btn secondary" style="--pad:10px 14px" href="https://cal.com/your-handle" target="_blank" rel="noopener">Book a 15‑min chat</a>
+      </aside>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Noah Fighter. Built with vanilla HTML/CSS.</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
