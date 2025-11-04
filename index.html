@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Noah Fighter — Portfolio</title>
+  <meta name="description" content="Noah Fighter — Software Engineering and Sports Analytics Portfolio" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f17;
+      --card: #101624;
+      --text: #e6eaf2;
+      --muted: #9aa3b2;
+      --brand: #5eead4;
+      --ring: rgba(94,234,212,.35);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: radial-gradient(1200px 800px at 80% -10%, #1a2440 0%, transparent 60%),
+                  radial-gradient(900px 600px at -10% 20%, #06202f 0%, transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 48px 20px; }
+    header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--text); }
+    .avatar {
+      width: 56px; height: 56px; border-radius: 14px; display: grid; place-items: center;
+      font-weight: 800; font-size: 22px;
+      background: linear-gradient(135deg, #1f2937, #0ea5e9);
+      box-shadow: 0 8px 30px rgba(14,165,233,.25);
+    }
+    .name { font-weight: 800; font-size: 20px; }
+    .tag { color: var(--muted); font-size: 14px; margin-top: -4px; }
+    .card {
+      margin-top: 36px;
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      padding: 28px 24px;
+      box-shadow: 0 10px 35px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.05);
+      backdrop-filter: blur(6px);
+    }
+    h1 { font-size: 34px; margin: 0 0 10px; font-weight: 800; }
+    p.lead { color: var(--muted); margin: 0 0 22px; max-width: 70ch; }
+    .links { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 14px; margin-top: 18px; }
+    .linkcard {
+      background: var(--card); border: 1px solid rgba(255,255,255,.08); border-radius: 14px;
+      padding: 16px; display: flex; align-items: center; gap: 12px;
+      text-decoration: none; color: var(--text);
+      transition: transform .12s ease, border-color .12s ease;
+    }
+    .linkcard:hover { transform: translateY(-2px); border-color: rgba(94,234,212,.45); }
+    .linkicon { width: 36px; height: 36px; border-radius: 9px; display: grid; place-items: center; background: #0b1220; }
+    .linkmeta small { color: var(--muted); }
+    ul { color: var(--muted); padding-left: 20px; }
+    footer { margin-top: 36px; color: var(--muted); font-size: 14px; text-align: center; }
+    @media (max-width: 700px) { h1 { font-size: 26px; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="logo" href="#">
+        <div class="avatar">NF</div>
+        <div>
+          <div class="name">Noah Fighter</div>
+          <div class="tag">Software & Sports Analytics</div>
+        </div>
+      </a>
+    </header>
+
+    <section class="card">
+      <h1>Building data-driven sports tools & efficient software.</h1>
+      <p class="lead">I’m a Computer Science student at Skidmore College (Class of 2027) focused on software engineering and sports analytics. Here are quick links to my résumé, GitHub, and LinkedIn.</p>
+
+      <div class="links">
+        <a class="linkcard" href="resume/Noah_Fighter_Resume.pdf" target="_blank">
+          <div class="linkicon">📄</div>
+          <div class="linkmeta">
+            <div><strong>Résumé</strong></div>
+            <small>View or download PDF</small>
+          </div>
+        </a>
+
+        <a class="linkcard" href="https://github.com/noahfighter883/Noah-Fighter.git" target="_blank">
+          <div class="linkicon">💻</div>
+          <div class="linkmeta">
+            <div><strong>GitHub</strong></div>
+            <small>Repositories & code samples</small>
+          </div>
+        </a>
+
+        <a class="linkcard" href="https://www.linkedin.com/in/noah-fighter-b62130341" target="_blank">
+          <div class="linkicon">🔗</div>
+          <div class="linkmeta">
+            <div><strong>LinkedIn</strong></div>
+            <small>Experience & updates</small>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Highlighted Projects</h2>
+      <ul>
+        <li><strong>NBA Assists Predictor (C):</strong> projects assists using sportsbook lines, last-5 potential assists, pace, and team context.</li>
+        <li><strong>NBA Points Model (C):</strong> blends betting lines, season averages, pace, and defense vs position.</li>
+        <li><strong>NFL Receiver Projections (Python):</strong> merges sportsbook lines with game script, weather, and defensive matchups.</li>
+        <li><strong>Blackjack (Java):</strong> console game supporting splits, doubles, and bankroll management.</li>
+        <li><strong>CBB Predictor (Java):</strong> win-probability model using NET, SOR, adjusted efficiencies, and quadrant records.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Contact</h2>
+      <p class="lead">Open to internships in software engineering & sports analytics.</p>
+      <a href="mailto:noahfighter@skidmore.edu" style="color:#5eead4; font-weight:600; text-decoration:none;">📧 noahfighter@skidmore.edu</a>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Noah Fighter — Built with HTML & CSS
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
