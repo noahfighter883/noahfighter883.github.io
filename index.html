@@ -1,136 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Noah Fighter — Portfolio</title>
-  <meta name="description" content="Noah Fighter — Software Engineering and Sports Analytics Portfolio" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0b0f17;
-      --card: #101624;
-      --text: #e6eaf2;
-      --muted: #9aa3b2;
-      --brand: #5eead4;
-      --ring: rgba(94,234,212,.35);
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      background: radial-gradient(1200px 800px at 80% -10%, #1a2440 0%, transparent 60%),
-                  radial-gradient(900px 600px at -10% 20%, #06202f 0%, transparent 55%),
-                  var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    .wrap { max-width: 1000px; margin: 0 auto; padding: 48px 20px; }
-    header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-    .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--text); }
-    .avatar {
-      width: 56px; height: 56px; border-radius: 14px; display: grid; place-items: center;
-      font-weight: 800; font-size: 22px;
-      background: linear-gradient(135deg, #1f2937, #0ea5e9);
-      box-shadow: 0 8px 30px rgba(14,165,233,.25);
-    }
-    .name { font-weight: 800; font-size: 20px; }
-    .tag { color: var(--muted); font-size: 14px; margin-top: -4px; }
-    .card {
-      margin-top: 36px;
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 18px;
-      padding: 28px 24px;
-      box-shadow: 0 10px 35px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.05);
-      backdrop-filter: blur(6px);
-    }
-    h1 { font-size: 34px; margin: 0 0 10px; font-weight: 800; }
-    p.lead { color: var(--muted); margin: 0 0 22px; max-width: 70ch; }
-    .links { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 14px; margin-top: 18px; }
-    .linkcard {
-      background: var(--card); border: 1px solid rgba(255,255,255,.08); border-radius: 14px;
-      padding: 16px; display: flex; align-items: center; gap: 12px;
-      text-decoration: none; color: var(--text);
-      transition: transform .12s ease, border-color .12s ease;
-    }
-    .linkcard:hover { transform: translateY(-2px); border-color: rgba(94,234,212,.45); }
-    .linkicon { width: 36px; height: 36px; border-radius: 9px; display: grid; place-items: center; background: #0b1220; }
-    .linkmeta small { color: var(--muted); }
-    ul { color: var(--muted); padding-left: 20px; }
-    footer { margin-top: 36px; color: var(--muted); font-size: 14px; text-align: center; }
-    @media (max-width: 700px) { h1 { font-size: 26px; } }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Noah Fighter — UX/UI Design &amp; Data-Driven Insights</title>
+<meta name="description" content="Noah Fighter — UX/UI designer and data-driven problem solver. Skidmore CS student building products and analytics that turn data into business insight." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <a class="logo" href="#">
-        <div class="avatar">NF</div>
-        <div>
-          <div class="name">Noah Fighter</div>
-          <div class="tag">Software & Sports Analytics</div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top">Noah Fighter</a>
+    <nav class="site-nav">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+    </nav>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+  </div>
+</header>
+
+<main>
+
+  <section id="top" class="hero wrap">
+    <div class="hero-top">
+      <div class="hero-photo">
+        <img src="assets/headshot.jpg" alt="Portrait of Noah Fighter" />
+      </div>
+      <div class="hero-heading">
+        <h1>Hey, I'm Noah.</h1>
+        <p class="tagline">UX/UI Designer &amp; Data-Driven Problem Solver</p>
+      </div>
+    </div>
+    <p class="lead">
+      I'm a Computer Science student who works both sides of the same question: how do you build something people
+      actually want to use, and how do you know it's working? I design interfaces in Figma and prototype them in
+      React and Next.js, and I dig into data with Python and SQL to turn it into insight a business can act on.
+    </p>
+    <div class="chips">
+      <a class="chip" href="mailto:noahfighter@skidmore.edu">Email</a>
+      <a class="chip" href="https://www.linkedin.com/in/noah-fighter-b62130341" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="chip" href="https://github.com/noahfighter883" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="chip chip-accent" href="assets/Noah_Fighter_Resume.pdf" target="_blank" rel="noopener">Résumé ↗</a>
+    </div>
+  </section>
+
+  <section id="about" class="wrap section">
+    <span class="section-eyebrow">About</span>
+    <h2>Design instincts, backed by data</h2>
+    <p class="section-lead">
+      I'm a Computer Science major (minoring in Math and Economics) at Skidmore College, currently studying abroad
+      in Barcelona. I got into UX/UI because I like fixing things that are technically functional but frustrating to
+      use — and I got into data because I wanted proof that a fix actually worked. Most of my projects sit at that
+      intersection: a real product or dataset, a real usability or business problem, and an interface that makes the
+      answer legible. That's the kind of work I'm looking to keep doing, whether the deliverable is a Figma
+      prototype or a dashboard full of numbers.
+    </p>
+  </section>
+
+  <section id="experience" class="wrap section">
+    <span class="section-eyebrow">Experience</span>
+    <h2>Where I've worked</h2>
+
+    <div class="timeline-item">
+      <div class="timeline-date mono">Jan 2026 — Present</div>
+      <div class="timeline-content">
+        <h3>Product Design &amp; UX Intern</h3>
+        <div class="timeline-org">IL-Team Studio · Barcelona, Spain</div>
+        <ul>
+          <li>Designed and built multiple client-facing websites, translating brand and market research into functional, production-ready pages.</li>
+          <li>Created high-fidelity UI prototypes in Figma to pitch mock products to potential investors, iterating on stakeholder feedback.</li>
+          <li>Conducted competitive UI/UX analysis of European fashion brands, identifying patterns that directly informed prototype decisions.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="wrap section">
+    <span class="section-eyebrow">Projects</span>
+    <h2>My recent work</h2>
+    <p class="section-lead">A mix of UX/UI case studies and data-driven products — some are about designing a better flow, others are about surfacing an insight buried in a dataset.</p>
+
+    <article class="project-card">
+      <div class="project-media">
+        <img src="assets/projects/registrar.png" alt="Registrar course search results table showing course listings, meeting times, and seat availability" />
+      </div>
+      <div class="project-info">
+        <span class="project-tag">UX/UI Case Study</span>
+        <h3>Registrar — Course Registration Redesign</h3>
+        <p>Redesigned a Banner-style college registration system end to end, from a heuristic-evaluation audit through a fully interactive prototype — fixing broken filters, ambiguous validation states, and buried information.</p>
+        <div class="tech-tags">
+          <span>Next.js</span><span>TypeScript</span><span>Tailwind CSS</span>
         </div>
-      </a>
-    </header>
+        <div class="project-links">
+          <a href="https://registrar-ux-redesign.vercel.app" target="_blank" rel="noopener">Live site ↗</a>
+          <a href="https://github.com/noahfighter883/registrar-ux-redesign" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+    </article>
 
-    <section class="card">
-      <h1>Building data-driven sports tools & efficient software.</h1>
-      <p class="lead">I’m a Computer Science student at Skidmore College (Class of 2027) focused on software engineering and sports analytics. Here are quick links to my résumé, GitHub, and LinkedIn.</p>
+    <article class="project-card">
+      <div class="project-media">
+        <img src="assets/projects/dynastyevaluator.png" alt="DynastyEvaluator league power rankings table ranking fantasy football teams by dynasty value" />
+      </div>
+      <div class="project-info">
+        <span class="project-tag">Product Design + Data</span>
+        <h3>DynastyEvaluator</h3>
+        <p>A fantasy football analytics dashboard that answers the question every dynasty manager asks: if my league re-drafted today, how would every team stack up? Live rosters pulled from the Sleeper API, ranked with a custom average-rank scoring system.</p>
+        <div class="tech-tags">
+          <span>React</span><span>TypeScript</span><span>Python (serverless)</span>
+        </div>
+        <div class="project-links">
+          <a href="https://dynasty-fantasy-football-dashboard.vercel.app" target="_blank" rel="noopener">Live site ↗</a>
+          <a href="https://github.com/noahfighter883/DynastyFantasyFootballDashboard" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+    </article>
 
-      <div class="links">
-        <a class="linkcard" href="resume/Noah_Fighter_Resume.pdf" target="_blank">
-          <div class="linkicon">📄</div>
-          <div class="linkmeta">
-            <div><strong>Résumé</strong></div>
-            <small>View or download PDF</small>
-          </div>
+    <article class="project-card">
+      <div class="project-media">
+        <img src="assets/projects/nflwinprob.png" alt="Win probability replay chart showing a dramatic NFL comeback game" />
+      </div>
+      <div class="project-info">
+        <span class="project-tag">Data Science + Visualization</span>
+        <h3>NFL Win Probability Model</h3>
+        <p>An XGBoost model trained from scratch on 166k plays of NFL data (0.845 AUC), paired with an interactive React replay of five of the most dramatic games in recent seasons — turning a technical ML pipeline into a story anyone can follow.</p>
+        <div class="tech-tags">
+          <span>Python</span><span>XGBoost</span><span>React</span>
+        </div>
+        <div class="project-links">
+          <a href="https://nfl-win-probability.vercel.app" target="_blank" rel="noopener">Live site ↗</a>
+          <a href="https://github.com/noahfighter883/nfl-win-probability" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-card">
+      <div class="project-media">
+        <img src="assets/projects/lineboard.png" alt="Line Board interface comparing Vegas player props against fantasy football draft ADP" />
+      </div>
+      <div class="project-info">
+        <span class="project-tag">Data Insight Product</span>
+        <h3>Line Board</h3>
+        <p>Finds mispriced fantasy football players by comparing two independent markets — Vegas season-long props and fantasy draft ADP — and surfacing the gap between them as a ranked, position-by-position board.</p>
+        <div class="tech-tags">
+          <span>JavaScript</span><span>Data Analysis</span>
+        </div>
+        <div class="project-links">
+          <a href="https://line-board-ten.vercel.app" target="_blank" rel="noopener">Live site ↗</a>
+          <a href="https://github.com/noahfighter883/LineBoard" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-card">
+      <div class="project-media">
+        <img src="assets/projects/devpathreport.png" alt="Interactive report screen showing findings from the Stack Overflow Developer Survey" />
+      </div>
+      <div class="project-info">
+        <span class="project-tag">Data Storytelling</span>
+        <h3>What Actually Pays Off in a Developer Career</h3>
+        <p>An interactive breakdown of the 2025 Stack Overflow Developer Survey (49,191 respondents), built around three findings that go beyond the usual "AI is changing everything" takes — like how the degree premium shrinks but never disappears.</p>
+        <div class="tech-tags">
+          <span>JavaScript</span><span>Data Visualization</span>
+        </div>
+        <div class="project-links">
+          <a href="https://dev-path-report.vercel.app" target="_blank" rel="noopener">Live site ↗</a>
+          <a href="https://github.com/noahfighter883/dev-path-report" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <div class="more-projects">
+      <h3>More on GitHub</h3>
+      <div class="more-grid">
+        <a class="more-item" href="https://github.com/noahfighter883/olist-ecommerce-sql-analytics" target="_blank" rel="noopener">
+          <span class="more-title">Olist E-Commerce SQL Analytics</span>
+          <span class="more-desc">100k Brazilian e-commerce orders analyzed in pure SQL — revenue trends, RFM segmentation, and how delivery delays tank review scores.</span>
         </a>
-
-        <a class="linkcard" href="https://github.com/noahfighter883/Noah-Fighter.git" target="_blank">
-          <div class="linkicon">💻</div>
-          <div class="linkmeta">
-            <div><strong>GitHub</strong></div>
-            <small>Repositories & code samples</small>
-          </div>
+        <a class="more-item" href="https://github.com/noahfighter883/cbb-win-probability-model" target="_blank" rel="noopener">
+          <span class="more-title">CBB Win Probability Model</span>
+          <span class="more-desc">A college basketball win-probability model, same family as the NFL project.</span>
         </a>
-
-        <a class="linkcard" href="https://www.linkedin.com/in/noah-fighter-b62130341" target="_blank">
-          <div class="linkicon">🔗</div>
-          <div class="linkmeta">
-            <div><strong>LinkedIn</strong></div>
-            <small>Experience & updates</small>
-          </div>
+        <a class="more-item" href="https://github.com/noahfighter883/nfl-receiver-projections" target="_blank" rel="noopener">
+          <span class="more-title">NFL Receiver Projections</span>
+          <span class="more-desc">Statistical projections for receiver performance from historical data.</span>
         </a>
       </div>
-    </section>
+      <a class="see-all" href="https://github.com/noahfighter883" target="_blank" rel="noopener">See all projects on GitHub →</a>
+    </div>
+  </section>
 
-    <section class="card">
-      <h2>Highlighted Projects</h2>
-      <ul>
-        <li><strong>NBA Assists Predictor (C):</strong> projects assists using sportsbook lines, last-5 potential assists, pace, and team context.</li>
-        <li><strong>NBA Points Model (C):</strong> blends betting lines, season averages, pace, and defense vs position.</li>
-        <li><strong>NFL Receiver Projections (Python):</strong> merges sportsbook lines with game script, weather, and defensive matchups.</li>
-        <li><strong>Blackjack (Java):</strong> console game supporting splits, doubles, and bankroll management.</li>
-        <li><strong>CBB Predictor (Java):</strong> win-probability model using NET, SOR, adjusted efficiencies, and quadrant records.</li>
-      </ul>
-    </section>
+  <section id="skills" class="wrap section">
+    <span class="section-eyebrow">Skills</span>
+    <h2>Tools I work with</h2>
+    <div class="skills-grid">
+      <div>
+        <h3>Design</h3>
+        <div class="tags">
+          <span>Figma</span><span>High-fidelity prototyping</span><span>Wireframing</span>
+          <span>Competitive UX analysis</span><span>Design systems</span>
+        </div>
+      </div>
+      <div>
+        <h3>Technical</h3>
+        <div class="tags">
+          <span>React</span><span>Next.js</span><span>TypeScript</span><span>Python</span>
+          <span>SQL</span><span>Git / GitHub</span><span>Vercel</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="card">
-      <h2>Contact</h2>
-      <p class="lead">Open to internships in software engineering & sports analytics.</p>
-      <a href="mailto:noahfighter@skidmore.edu" style="color:#5eead4; font-weight:600; text-decoration:none;">📧 noahfighter@skidmore.edu</a>
-    </section>
+</main>
 
-    <footer>
-      © <span id="year"></span> Noah Fighter — Built with HTML & CSS
-    </footer>
+<footer class="site-footer wrap">
+  <div class="chips">
+    <a class="chip" href="mailto:noahfighter@skidmore.edu">Email</a>
+    <a class="chip" href="https://www.linkedin.com/in/noah-fighter-b62130341" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a class="chip" href="https://github.com/noahfighter883" target="_blank" rel="noopener">GitHub ↗</a>
+    <a class="chip chip-accent" href="assets/Noah_Fighter_Resume.pdf" target="_blank" rel="noopener">Résumé ↗</a>
   </div>
+  <p class="copyright">© 2026 Noah Fighter.</p>
+</footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<script src="script.js"></script>
 </body>
 </html>
