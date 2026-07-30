@@ -6,6 +6,20 @@
 <title>Noah Fighter — UX/UI Design &amp; Data-Driven Insights</title>
 <meta name="description" content="Noah Fighter — UX/UI designer and data-driven problem solver. Skidmore CS student building products and analytics that turn data into business insight." />
 
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="theme-color" content="#faf6ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1c1712" media="(prefers-color-scheme: dark)">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Noah Fighter — UX/UI Design & Data-Driven Insights">
+<meta property="og:description" content="UX/UI designer and data-driven problem solver. Skidmore CS student building products and analytics that turn data into business insight.">
+<meta property="og:url" content="https://noahfighter883.github.io/">
+<meta property="og:image" content="https://noahfighter883.github.io/assets/headshot.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Noah Fighter — UX/UI Design & Data-Driven Insights">
+<meta name="twitter:description" content="UX/UI designer and data-driven problem solver. Skidmore CS student building products and analytics that turn data into business insight.">
+<meta name="twitter:image" content="https://noahfighter883.github.io/assets/headshot.jpg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -16,13 +30,16 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="#top">Noah Fighter</a>
-    <nav class="site-nav">
+    <nav class="site-nav" id="site-nav">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
     </nav>
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    <div class="header-actions">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-nav">☰</button>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
   </div>
 </header>
 
@@ -89,7 +106,7 @@
 
     <article class="project-card">
       <div class="project-media">
-        <img src="assets/projects/registrar.png" alt="Registrar course search results table showing course listings, meeting times, and seat availability" />
+        <img src="assets/projects/registrar.webp" alt="Registrar course search results table showing course listings, meeting times, and seat availability" />
       </div>
       <div class="project-info">
         <span class="project-tag">UX/UI Case Study</span>
@@ -107,7 +124,7 @@
 
     <article class="project-card">
       <div class="project-media">
-        <img src="assets/projects/dynastyevaluator.png" alt="DynastyEvaluator league power rankings table ranking fantasy football teams by dynasty value" />
+        <img src="assets/projects/dynastyevaluator.webp" alt="DynastyEvaluator league power rankings table ranking fantasy football teams by dynasty value" />
       </div>
       <div class="project-info">
         <span class="project-tag">Product Design + Data</span>
@@ -125,7 +142,7 @@
 
     <article class="project-card">
       <div class="project-media">
-        <img src="assets/projects/nflwinprob.png" alt="Win probability replay chart showing a dramatic NFL comeback game" />
+        <img src="assets/projects/nflwinprob.webp" alt="Win probability replay chart showing a dramatic NFL comeback game" />
       </div>
       <div class="project-info">
         <span class="project-tag">Data Science + Visualization</span>
@@ -143,7 +160,7 @@
 
     <article class="project-card">
       <div class="project-media">
-        <img src="assets/projects/lineboard.png" alt="Line Board interface comparing Vegas player props against fantasy football draft ADP" />
+        <img src="assets/projects/lineboard.webp" alt="Line Board interface comparing Vegas player props against fantasy football draft ADP" />
       </div>
       <div class="project-info">
         <span class="project-tag">Data Insight Product</span>
@@ -161,7 +178,7 @@
 
     <article class="project-card">
       <div class="project-media">
-        <img src="assets/projects/devpathreport.png" alt="Interactive report screen showing findings from the Stack Overflow Developer Survey" />
+        <img src="assets/projects/devpathreport.webp" alt="Interactive report screen showing findings from the Stack Overflow Developer Survey" />
       </div>
       <div class="project-info">
         <span class="project-tag">Data Storytelling</span>
