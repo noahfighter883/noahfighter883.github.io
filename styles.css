@@ -13,6 +13,7 @@
   --accent-tint-2: #ede3c8;
   --accent-tint-3: #dbe3d6;
   --shadow: 0 20px 45px -25px rgba(36, 31, 26, 0.35);
+  --shadow-lift: 0 28px 55px -22px rgba(36, 31, 26, 0.4);
   --radius-lg: 22px;
   --radius-md: 14px;
   --radius-sm: 8px;
@@ -35,6 +36,7 @@
   --accent-tint-2: #33291b;
   --accent-tint-3: #24291f;
   --shadow: 0 20px 45px -20px rgba(0, 0, 0, 0.55);
+  --shadow-lift: 0 28px 55px -18px rgba(0, 0, 0, 0.6);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -52,6 +54,7 @@
     --accent-tint-2: #33291b;
     --accent-tint-3: #24291f;
     --shadow: 0 20px 45px -20px rgba(0, 0, 0, 0.55);
+  --shadow-lift: 0 28px 55px -18px rgba(0, 0, 0, 0.6);
   }
 }
 
@@ -67,6 +70,23 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   transition: background 0.25s ease, color 0.25s ease;
+}
+
+/* Theme toggle touches every themed surface via CSS vars; without this,
+   body fades but cards/borders/chips snap instantly on the same click.
+   Elements with their own hover transition get the color values merged
+   into that declaration instead (see their rules below). */
+.site-header,
+.section,
+.project-media,
+.tech-tags span,
+.tags span {
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+.project-card {
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease,
+    box-shadow 0.25s ease, transform 0.25s ease, opacity 0.5s ease-out;
 }
 
 .wrap {
@@ -172,10 +192,14 @@ p { margin: 0 0 1em; }
   place-items: center;
   cursor: pointer;
   font-size: 1rem;
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  transition: border-color 0.15s ease, transform 0.15s ease, background-color 0.25s ease, color 0.25s ease;
 }
 
-.theme-toggle:hover { border-color: var(--accent); transform: translateY(-1px); }
+@media (hover: hover) and (pointer: fine) {
+  .theme-toggle:hover { border-color: var(--accent); transform: translateY(-1px); }
+}
+
+.theme-toggle:active, .nav-toggle:active { transform: scale(0.94); transition-duration: 0.12s; }
 
 /* ---------- Hero ---------- */
 .hero {
@@ -236,10 +260,13 @@ p { margin: 0 0 1em; }
   font-size: 0.92rem;
   font-weight: 500;
   color: var(--ink);
-  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.25s ease, color 0.25s ease;
 }
 
-.chip:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: var(--shadow); }
+@media (hover: hover) and (pointer: fine) {
+  .chip:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: var(--shadow); }
+}
 
 .chip-accent {
   background: var(--accent);
@@ -327,10 +354,13 @@ p { margin: 0 0 1em; }
   height: 100%;
   object-fit: cover;
   aspect-ratio: 16/10.3;
-  transition: transform 0.4s ease;
+  transition: transform 0.3s ease;
 }
 
-.project-card:hover .project-media img { transform: scale(1.04); }
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); }
+  .project-card:hover .project-media img { transform: scale(1.04); }
+}
 
 .project-tag {
   font-family: var(--font-mono);
@@ -371,6 +401,7 @@ p { margin: 0 0 1em; }
   color: var(--ink);
   border-bottom: 2px solid var(--accent);
   padding-bottom: 2px;
+  transition: color 0.15s ease;
 }
 
 .project-links a:hover { color: var(--accent-text); }
@@ -393,10 +424,12 @@ p { margin: 0 0 1em; }
   border: 1px solid var(--border);
   background: var(--card);
   text-decoration: none;
-  transition: transform 0.15s ease, border-color 0.15s ease;
+  transition: transform 0.15s ease, border-color 0.15s ease, background-color 0.25s ease, color 0.25s ease;
 }
 
-.more-item:hover { transform: translateY(-2px); border-color: var(--accent); }
+@media (hover: hover) and (pointer: fine) {
+  .more-item:hover { transform: translateY(-2px); border-color: var(--accent); }
+}
 
 .more-title { font-weight: 600; display: block; margin-bottom: 4px; }
 
@@ -408,6 +441,12 @@ p { margin: 0 0 1em; }
   font-weight: 600;
   text-decoration: none;
   color: var(--accent-text);
+  border-bottom: 1.5px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .see-all:hover { border-color: var(--accent-text); }
 }
 
 /* ---------- Skills ---------- */
@@ -457,6 +496,14 @@ p { margin: 0 0 1em; }
 
   .hero .lead { animation-delay: 0.08s; }
   .hero .chips { animation-delay: 0.16s; }
+
+  /* Applied only by script.js, and only when IntersectionObserver exists.
+     Timing rides on .project-card's own transition above (not redeclared
+     here) so hover/theme transitions on the same element stay intact.
+     Cards are fully visible by default (see .project-card above) so a JS
+     failure or slow load never leaves content hidden. */
+  .project-card.js-reveal { opacity: 0; transform: translateY(20px); }
+  .project-card.js-reveal.in-view { opacity: 1; transform: translateY(0); }
 }
 
 /* ---------- Mobile nav ---------- */
@@ -472,6 +519,7 @@ p { margin: 0 0 1em; }
   justify-content: center;
   cursor: pointer;
   font-size: 1.05rem;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.15s ease;
 }
 
 /* ---------- Responsive ---------- */
@@ -479,7 +527,7 @@ p { margin: 0 0 1em; }
   .nav-toggle { display: flex; }
 
   .site-nav {
-    display: none;
+    display: flex;
     position: absolute;
     top: 64px;
     left: 0;
@@ -491,11 +539,28 @@ p { margin: 0 0 1em; }
     background: var(--card);
     border-bottom: 1px solid var(--border);
     box-shadow: var(--shadow);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
   }
 
-  .site-nav.is-open { display: flex; }
+  .site-nav.is-open { opacity: 1; visibility: visible; pointer-events: auto; }
   .site-nav a { width: 100%; padding: 10px 0; }
   .site-nav a::after { display: none; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .site-nav {
+      transform: translateY(-8px);
+      transition: opacity 0.2s ease-out, transform 0.2s ease-out,
+        background-color 0.25s ease, border-color 0.25s ease, visibility 0s linear 0.2s;
+    }
+
+    .site-nav.is-open {
+      transform: translateY(0);
+      transition: opacity 0.2s ease-out, transform 0.2s ease-out,
+        background-color 0.25s ease, border-color 0.25s ease, visibility 0s linear 0s;
+    }
+  }
 
   .hero-top { flex-direction: column; align-items: flex-start; }
   .timeline-item { grid-template-columns: 1fr; gap: 6px; }

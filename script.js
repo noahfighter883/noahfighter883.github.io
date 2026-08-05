@@ -50,4 +50,35 @@
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closeNav();
   });
+
+  var reduceMotion = !window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
+  var cards = document.querySelectorAll('.project-card');
+
+  if (!reduceMotion && 'IntersectionObserver' in window && cards.length) {
+    cards.forEach(function (card) { card.classList.add('js-reveal'); });
+
+    var clearDelayOnEnd = function (card) {
+      card.addEventListener('transitionend', function handler(e) {
+        if (e.propertyName !== 'opacity') return;
+        card.style.transitionDelay = '';
+        card.removeEventListener('transitionend', handler);
+      });
+    };
+
+    var observer = new IntersectionObserver(
+      function (entries, obs) {
+        var justEntered = entries.filter(function (entry) { return entry.isIntersecting; });
+        justEntered.forEach(function (entry, i) {
+          var card = entry.target;
+          card.style.transitionDelay = i * 0.08 + 's';
+          card.classList.add('in-view');
+          clearDelayOnEnd(card);
+          obs.unobserve(card);
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -8% 0px' }
+    );
+
+    cards.forEach(function (card) { observer.observe(card); });
+  }
 })();
