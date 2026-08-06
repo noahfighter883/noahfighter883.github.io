@@ -3,6 +3,12 @@
   var toggle = document.getElementById('theme-toggle');
   var stored = localStorage.getItem('theme');
 
+  function popIcon(el) {
+    el.classList.remove('icon-pop');
+    void el.offsetWidth;
+    el.classList.add('icon-pop');
+  }
+
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
     toggle.textContent = theme === 'dark' ? '☀️' : '🌙';
@@ -14,6 +20,7 @@
   toggle.addEventListener('click', function () {
     var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     applyTheme(next);
+    popIcon(toggle);
     localStorage.setItem('theme', next);
   });
 
@@ -24,12 +31,14 @@
     nav.classList.remove('is-open');
     navToggle.setAttribute('aria-expanded', 'false');
     navToggle.textContent = '☰';
+    popIcon(navToggle);
   }
 
   function openNav() {
     nav.classList.add('is-open');
     navToggle.setAttribute('aria-expanded', 'true');
     navToggle.textContent = '✕';
+    popIcon(navToggle);
   }
 
   navToggle.addEventListener('click', function () {
@@ -80,5 +89,19 @@
     );
 
     cards.forEach(function (card) { observer.observe(card); });
+  }
+
+  if (!reduceMotion) {
+    var lazyImages = document.querySelectorAll('.project-media img[loading="lazy"]');
+    lazyImages.forEach(function (img) {
+      img.classList.add('img-fade');
+      if (img.complete) {
+        img.classList.add('is-loaded');
+        return;
+      }
+      var reveal = function () { img.classList.add('is-loaded'); };
+      img.addEventListener('load', reveal, { once: true });
+      img.addEventListener('error', reveal, { once: true });
+    });
   }
 })();
