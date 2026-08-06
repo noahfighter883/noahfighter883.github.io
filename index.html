@@ -22,7 +22,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -87,7 +87,10 @@
     <h2>Where I've worked</h2>
 
     <div class="timeline-item">
-      <div class="timeline-date mono">Jan 2026 to Present</div>
+      <div class="timeline-marker">
+        <div class="timeline-badge" aria-hidden="true">IL</div>
+        <div class="timeline-date mono">Jan 2026 to Present</div>
+      </div>
       <div class="timeline-content">
         <h3>Product Design &amp; UX Intern</h3>
         <div class="timeline-org">IL-Team Studio · Barcelona, Spain</div>
@@ -105,7 +108,7 @@
     <h2>My recent work</h2>
     <p class="section-lead">A mix of UX/UI case studies and data-driven products. Some are about designing a better flow, others are about digging an insight out of a messy dataset.</p>
 
-    <article class="project-card">
+    <article class="project-card project-registrar">
       <div class="project-media">
         <img src="assets/projects/registrar.webp" alt="Registrar course search results table showing course listings, meeting times, and seat availability" />
       </div>
@@ -123,9 +126,9 @@
       </div>
     </article>
 
-    <article class="project-card">
+    <article class="project-card project-dynastyevaluator">
       <div class="project-media">
-        <img src="assets/projects/dynastyevaluator.webp" alt="DynastyEvaluator dashboard showing the league power rankings page, with all 12 teams ranked by dynasty value and a QB, RB, WR, TE position breakdown" />
+        <img src="assets/projects/dynastyevaluator.webp" alt="DynastyEvaluator dashboard showing the league power rankings page, with all 12 teams ranked by dynasty value and a QB, RB, WR, TE position breakdown" loading="lazy" />
       </div>
       <div class="project-info">
         <span class="project-tag">Product Design + Data</span>
@@ -141,9 +144,9 @@
       </div>
     </article>
 
-    <article class="project-card">
+    <article class="project-card project-nflwinprob">
       <div class="project-media">
-        <img src="assets/projects/nflwinprob.webp" alt="Win probability replay chart showing a dramatic NFL comeback game" />
+        <img src="assets/projects/nflwinprob.webp" alt="Win probability replay chart showing a dramatic NFL comeback game" loading="lazy" />
       </div>
       <div class="project-info">
         <span class="project-tag">Data Science + Visualization</span>
@@ -159,9 +162,9 @@
       </div>
     </article>
 
-    <article class="project-card">
+    <article class="project-card project-myrefills">
       <div class="project-media">
-        <img src="assets/projects/myrefills.webp" alt="MyRefills refill medications screen, showing prescriptions sorted by urgency with coverage badges and a request-refill flow" />
+        <img src="assets/projects/myrefills.webp" alt="MyRefills refill medications screen, showing prescriptions sorted by urgency with coverage badges and a request-refill flow" loading="lazy" />
       </div>
       <div class="project-info">
         <span class="project-tag">UX/UI Case Study</span>
@@ -177,9 +180,9 @@
       </div>
     </article>
 
-    <article class="project-card">
+    <article class="project-card project-lineboard">
       <div class="project-media">
-        <img src="assets/projects/lineboard.webp" alt="Line Board interface comparing Vegas player props against fantasy football draft ADP" />
+        <img src="assets/projects/lineboard.webp" alt="Line Board interface comparing Vegas player props against fantasy football draft ADP" loading="lazy" />
       </div>
       <div class="project-info">
         <span class="project-tag">Data Insight Product</span>
@@ -195,9 +198,9 @@
       </div>
     </article>
 
-    <article class="project-card">
+    <article class="project-card project-devpathreport">
       <div class="project-media">
-        <img src="assets/projects/devpathreport.webp" alt="Interactive report screen showing findings from the Stack Overflow Developer Survey" />
+        <img src="assets/projects/devpathreport.webp" alt="Interactive report screen showing findings from the Stack Overflow Developer Survey" loading="lazy" />
       </div>
       <div class="project-info">
         <span class="project-tag">Data Storytelling</span>
@@ -257,6 +260,8 @@
 </main>
 
 <footer class="site-footer wrap">
+  <h3 class="footer-cta">Let's build something.</h3>
+  <p class="footer-note">Always happy to talk about a role, a project, or just design and data.</p>
   <div class="chips">
     <a class="chip" href="mailto:noahfighter@skidmore.edu">Email</a>
     <a class="chip" href="https://www.linkedin.com/in/noah-fighter-b62130341" target="_blank" rel="noopener">LinkedIn ↗</a>

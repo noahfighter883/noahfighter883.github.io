@@ -9,15 +9,20 @@
   --accent: #c1502e;
   --accent-text: #a8431f;
   --accent-ink: #ffffff;
-  --accent-tint: #f3ded4;
-  --accent-tint-2: #ede3c8;
-  --accent-tint-3: #dbe3d6;
+  /* Project-card tints, one per project, pulled from each screenshot's own
+     accent color rather than an arbitrary repeating cycle. */
+  --tint-registrar: #e6eaf2;
+  --tint-dynastyevaluator: #e8e6f2;
+  --tint-nflwinprob: #f2ede6;
+  --tint-lineboard: #e6f2ef;
+  --tint-devpathreport: #e6eff2;
+  --tint-myrefills: #e6ecf2;
   --shadow: 0 20px 45px -25px rgba(36, 31, 26, 0.35);
   --shadow-lift: 0 28px 55px -22px rgba(36, 31, 26, 0.4);
   --radius-lg: 22px;
   --radius-md: 14px;
   --radius-sm: 8px;
-  --font-head: 'Poppins', 'Inter', system-ui, sans-serif;
+  --font-head: 'Fraunces', Georgia, 'Times New Roman', serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
 }
@@ -32,9 +37,12 @@
   --accent: #e2733f;
   --accent-text: #e2733f;
   --accent-ink: #1c1712;
-  --accent-tint: #3a2a22;
-  --accent-tint-2: #33291b;
-  --accent-tint-3: #24291f;
+  --tint-registrar: #1b202d;
+  --tint-dynastyevaluator: #1d1b2d;
+  --tint-nflwinprob: #2d261b;
+  --tint-lineboard: #1b2d28;
+  --tint-devpathreport: #1b292d;
+  --tint-myrefills: #1b242d;
   --shadow: 0 20px 45px -20px rgba(0, 0, 0, 0.55);
   --shadow-lift: 0 28px 55px -18px rgba(0, 0, 0, 0.6);
 }
@@ -50,9 +58,12 @@
     --accent: #e2733f;
     --accent-text: #e2733f;
     --accent-ink: #1c1712;
-    --accent-tint: #3a2a22;
-    --accent-tint-2: #33291b;
-    --accent-tint-3: #24291f;
+    --tint-registrar: #1b202d;
+    --tint-dynastyevaluator: #1d1b2d;
+    --tint-nflwinprob: #2d261b;
+    --tint-lineboard: #1b2d28;
+    --tint-devpathreport: #1b292d;
+    --tint-myrefills: #1b242d;
     --shadow: 0 20px 45px -20px rgba(0, 0, 0, 0.55);
   --shadow-lift: 0 28px 55px -18px rgba(0, 0, 0, 0.6);
   }
@@ -111,7 +122,7 @@ h1, h2, h3 {
   margin: 0;
 }
 
-h1 { font-size: clamp(2.2rem, 5vw, 3.1rem); font-weight: 700; }
+h1 { font-size: clamp(2.2rem, 5vw, 3.1rem); font-weight: 600; font-style: italic; }
 h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 600; }
 h3 { font-size: 1.25rem; font-weight: 600; }
 
@@ -208,6 +219,7 @@ p { margin: 0 0 1em; }
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
+  scroll-margin-top: 80px;
 }
 
 .hero-top {
@@ -275,7 +287,7 @@ p { margin: 0 0 1em; }
 }
 
 /* ---------- Sections ---------- */
-.section { padding: 56px 24px; border-top: 1px solid var(--border); }
+.section { padding: 56px 24px; border-top: 1px solid var(--border); scroll-margin-top: 80px; }
 
 .section-eyebrow {
   font-family: var(--font-mono);
@@ -301,11 +313,34 @@ p { margin: 0 0 1em; }
   margin-top: 28px;
 }
 
+.timeline-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.timeline-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  font-family: var(--font-head);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--accent-text);
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
 .timeline-date {
   font-family: var(--font-mono);
   color: var(--muted);
   font-size: 0.9rem;
-  padding-top: 4px;
 }
 
 .timeline-org {
@@ -334,11 +369,12 @@ p { margin: 0 0 1em; }
   border: 1px solid var(--border);
 }
 
-.project-card:nth-of-type(1) { background: var(--accent-tint); }
-.project-card:nth-of-type(2) { background: var(--accent-tint-2); }
-.project-card:nth-of-type(3) { background: var(--accent-tint-3); }
-.project-card:nth-of-type(4) { background: var(--accent-tint); }
-.project-card:nth-of-type(5) { background: var(--accent-tint-2); }
+.project-registrar { background: var(--tint-registrar); }
+.project-dynastyevaluator { background: var(--tint-dynastyevaluator); }
+.project-nflwinprob { background: var(--tint-nflwinprob); }
+.project-myrefills { background: var(--tint-myrefills); }
+.project-lineboard { background: var(--tint-lineboard); }
+.project-devpathreport { background: var(--tint-devpathreport); }
 
 .project-card:nth-of-type(even) .project-media { order: 2; }
 
@@ -478,6 +514,10 @@ p { margin: 0 0 1em; }
   flex-direction: column;
   gap: 18px;
 }
+
+.footer-cta { font-style: italic; font-size: clamp(1.4rem, 3vw, 1.8rem); }
+
+.footer-note { color: var(--muted); margin: -8px 0 0; }
 
 .copyright { color: var(--muted); font-size: 0.85rem; margin: 0; }
 
