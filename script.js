@@ -3,6 +3,14 @@
   var toggle = document.getElementById('theme-toggle');
   var stored = localStorage.getItem('theme');
 
+  var svgOpen = '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">';
+  var ICONS = {
+    moon: svgOpen + '<path d="M17 12.5A7 7 0 1 1 7.5 3a5.5 5.5 0 0 0 9.5 9.5Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    sun: svgOpen + '<circle cx="10" cy="10" r="3.5" stroke="currentColor" stroke-width="1.6"/><path d="M10 2v2M10 16v2M4.22 4.22l1.42 1.42M14.36 14.36l1.42 1.42M2 10h2M16 10h2M4.22 15.78l1.42-1.42M14.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
+    menu: svgOpen + '<path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
+    close: svgOpen + '<path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>'
+  };
+
   function popIcon(el) {
     el.classList.remove('icon-pop');
     void el.offsetWidth;
@@ -11,7 +19,7 @@
 
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
-    toggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+    toggle.innerHTML = theme === 'dark' ? ICONS.sun : ICONS.moon;
   }
 
   var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -30,16 +38,18 @@
   function closeNav() {
     nav.classList.remove('is-open');
     navToggle.setAttribute('aria-expanded', 'false');
-    navToggle.textContent = '☰';
+    navToggle.innerHTML = ICONS.menu;
     popIcon(navToggle);
   }
 
   function openNav() {
     nav.classList.add('is-open');
     navToggle.setAttribute('aria-expanded', 'true');
-    navToggle.textContent = '✕';
+    navToggle.innerHTML = ICONS.close;
     popIcon(navToggle);
   }
+
+  navToggle.innerHTML = ICONS.menu;
 
   navToggle.addEventListener('click', function () {
     if (nav.classList.contains('is-open')) closeNav();
