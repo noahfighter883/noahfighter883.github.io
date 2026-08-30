@@ -17,6 +17,7 @@
   --tint-lineboard: #e6f2ef;
   --tint-devpathreport: #e6eff2;
   --tint-myrefills: #e6ecf2;
+  --tint-obodysseys: #e6f2e8;
   --shadow: 0 20px 45px -25px rgba(36, 31, 26, 0.35);
   --shadow-lift: 0 28px 55px -22px rgba(36, 31, 26, 0.4);
   --radius-lg: 22px;
@@ -47,6 +48,7 @@
   --tint-lineboard: #1b2d28;
   --tint-devpathreport: #1b292d;
   --tint-myrefills: #1b242d;
+  --tint-obodysseys: #1b2d1d;
   --shadow: 0 20px 45px -20px rgba(0, 0, 0, 0.55);
   --shadow-lift: 0 28px 55px -18px rgba(0, 0, 0, 0.6);
 }
@@ -68,6 +70,7 @@
     --tint-lineboard: #1b2d28;
     --tint-devpathreport: #1b292d;
     --tint-myrefills: #1b242d;
+    --tint-obodysseys: #1b2d1d;
     --shadow: 0 20px 45px -20px rgba(0, 0, 0, 0.55);
   --shadow-lift: 0 28px 55px -18px rgba(0, 0, 0, 0.6);
   }
@@ -378,6 +381,7 @@ p { margin: 0 0 1em; }
 .project-myrefills { background: var(--tint-myrefills); }
 .project-lineboard { background: var(--tint-lineboard); }
 .project-devpathreport { background: var(--tint-devpathreport); }
+.project-obodysseys { background: var(--tint-obodysseys); }
 
 .project-card:nth-of-type(even) .project-media { order: 2; }
 
