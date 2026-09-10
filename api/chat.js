@@ -74,7 +74,8 @@ module.exports = async function handler(req, res) {
     });
 
     if (!anthropicRes.ok) {
-      res.status(502).json({ error: 'Upstream error' });
+      const errBody = await anthropicRes.text();
+      res.status(502).json({ error: 'Upstream error', status: anthropicRes.status, detail: errBody, hadKey: !!process.env.ANTHROPIC_API_KEY });
       return;
     }
 
@@ -83,6 +84,6 @@ module.exports = async function handler(req, res) {
 
     res.status(200).json({ reply: reply || "Sorry, I couldn't come up with an answer." });
   } catch (err) {
-    res.status(500).json({ error: 'Server error' });
+    res.status(500).json({ error: 'Server error', detail: String(err) });
   }
 };
