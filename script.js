@@ -117,7 +117,7 @@
 })();
 
 (function () {
-  var CHAT_ENDPOINT = 'https://YOUR-VERCEL-PROJECT.vercel.app/api/chat';
+  var CHAT_ENDPOINT = 'https://noahfighter883-github-io.vercel.app/api/chat';
 
   var launcher = document.getElementById('chat-launcher');
   var panel = document.getElementById('chat-panel');
