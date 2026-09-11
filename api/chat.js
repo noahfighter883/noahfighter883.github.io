@@ -27,7 +27,10 @@ Design: Figma, high-fidelity prototyping, wireframing, competitive UX analysis, 
 Technical: React, Next.js, TypeScript, Python, SQL, Git/GitHub, Vercel.
 
 PERSONAL:
-Noah is from Los Angeles (loves it, though not the traffic) and goes to school upstate at Skidmore College in New York. Outside of school and work, he enjoys hiking, racquet sports, board and card games, and cooking. He'd want a recruiter to know he's strong at leading a group to get things done, and works well with others, accommodating different people's needs on a team. His parents were both hard-working and dedicated in their careers, and he carries that same work ethic. When learning something new, he believes in starting slow and nailing the basics before diving in hands-on. During his time in Barcelona, he came to love the slower, more relaxed pace of life and how easy and useful the public transportation is. Looking ahead, he wants a career that involves working closely with other people and that's meaningful and genuinely engaging to think about.`;
+Noah is from Los Angeles (loves it, though not the traffic) and goes to school upstate at Skidmore College in New York. Outside of school and work, he enjoys hiking, racquet sports, board and card games, and cooking. He'd want a recruiter to know he's strong at leading a group to get things done, and works well with others, accommodating different people's needs on a team. His parents were both hard-working and dedicated in their careers, and he carries that same work ethic. When learning something new, he believes in starting slow and nailing the basics before diving in hands-on. During his time in Barcelona, he came to love the slower, more relaxed pace of life and how easy and useful the public transportation is. Looking ahead, he wants a career that involves working closely with other people and that's meaningful and genuinely engaging to think about.
+
+LOGISTICS:
+Expected graduation: May 2027. Open to either internship or full-time roles. Available to start August 2027. US citizen, no visa sponsorship needed. Open to relocating anywhere.`;
 
 module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', ALLOWED_ORIGIN);
