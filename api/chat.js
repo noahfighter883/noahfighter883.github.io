@@ -63,6 +63,11 @@ module.exports = async function handler(req, res) {
     return;
   }
 
+  const lastUserMessage = cleanMessages.filter((m) => m.role === 'user').pop();
+  if (lastUserMessage) {
+    console.log('Chat question:', lastUserMessage.content);
+  }
+
   try {
     const anthropicRes = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
