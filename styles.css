@@ -11,13 +11,15 @@
   --accent-ink: #ffffff;
   /* Project-card tints, one per project, pulled from each screenshot's own
      accent color rather than an arbitrary repeating cycle. */
-  --tint-registrar: #e6eaf2;
+  --tint-registrar: #f2ebe6;
   --tint-dynastyevaluator: #e8e6f2;
   --tint-nflwinprob: #f2ede6;
   --tint-lineboard: #e6f2ef;
   --tint-devpathreport: #e6eff2;
   --tint-myrefills: #e6ecf2;
   --tint-obodysseys: #e6f2e8;
+  --tint-nflpositionvalue: #e6f2ea;
+  --tint-telcochurn: #e6ecf2;
   --shadow: 0 20px 45px -25px rgba(36, 31, 26, 0.35);
   --shadow-lift: 0 28px 55px -22px rgba(36, 31, 26, 0.4);
   --radius-lg: 22px;
@@ -42,13 +44,15 @@
   --accent: #e2733f;
   --accent-text: #e2733f;
   --accent-ink: #1c1712;
-  --tint-registrar: #1b202d;
+  --tint-registrar: #2d231b;
   --tint-dynastyevaluator: #1d1b2d;
   --tint-nflwinprob: #2d261b;
   --tint-lineboard: #1b2d28;
   --tint-devpathreport: #1b292d;
   --tint-myrefills: #1b242d;
   --tint-obodysseys: #1b2d1d;
+  --tint-nflpositionvalue: #1b2d22;
+  --tint-telcochurn: #1b242d;
   --shadow: 0 20px 45px -20px rgba(0, 0, 0, 0.55);
   --shadow-lift: 0 28px 55px -18px rgba(0, 0, 0, 0.6);
 }
@@ -64,13 +68,15 @@
     --accent: #e2733f;
     --accent-text: #e2733f;
     --accent-ink: #1c1712;
-    --tint-registrar: #1b202d;
+    --tint-registrar: #2d231b;
     --tint-dynastyevaluator: #1d1b2d;
     --tint-nflwinprob: #2d261b;
     --tint-lineboard: #1b2d28;
     --tint-devpathreport: #1b292d;
     --tint-myrefills: #1b242d;
     --tint-obodysseys: #1b2d1d;
+    --tint-nflpositionvalue: #1b2d22;
+    --tint-telcochurn: #1b242d;
     --shadow: 0 20px 45px -20px rgba(0, 0, 0, 0.55);
   --shadow-lift: 0 28px 55px -18px rgba(0, 0, 0, 0.6);
   }
@@ -382,8 +388,45 @@ p { margin: 0 0 1em; }
 .project-lineboard { background: var(--tint-lineboard); }
 .project-devpathreport { background: var(--tint-devpathreport); }
 .project-obodysseys { background: var(--tint-obodysseys); }
+.project-nflpositionvalue { background: var(--tint-nflpositionvalue); }
+.project-telcochurn { background: var(--tint-telcochurn); }
+
+.project-group + .project-group { margin-top: 64px; }
+
+.group-title {
+  font-style: italic;
+  font-size: clamp(1.35rem, 2.6vw, 1.7rem);
+  margin-top: 40px;
+}
+
+.project-group + .project-group .group-title { margin-top: 0; }
+
+.group-note {
+  color: var(--muted);
+  margin: 6px 0 0;
+  max-width: 62ch;
+}
 
 .project-card:nth-of-type(even) .project-media { order: 2; }
+
+.project-kicker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+}
+
+.project-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+}
 
 .project-media {
   border-radius: var(--radius-md);
