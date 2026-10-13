@@ -409,25 +409,6 @@ p { margin: 0 0 1em; }
 
 .project-card:nth-of-type(even) .project-media { order: 2; }
 
-.project-kicker {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px 10px;
-}
-
-.project-badge {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-weight: 600;
-  padding: 3px 10px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--accent-ink);
-}
-
 .project-media {
   border-radius: var(--radius-md);
   overflow: hidden;
