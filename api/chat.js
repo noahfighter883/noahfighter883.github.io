@@ -30,8 +30,8 @@ UX/UI PROJECTS:
 - MyRefills (UX/UI Case Study): Redesigned prescription refills for elderly patients and caregivers, grounded in Medicare Part D adherence research and Pew tech-adoption data. Holds a 100/100 Lighthouse accessibility score across every screen. Next.js, TypeScript, Tailwind CSS.
 
 SKILLS:
-Data & technical: Python, SQL, DuckDB, Tableau, statistical modeling, XGBoost, data visualization, React, Next.js, TypeScript, Java, C, Git/GitHub, Vercel.
-Design: Figma, high-fidelity prototyping, wireframing, competitive UX analysis, design systems.
+Data & technical: SQL, Python, data analysis, data visualization, Tableau, statistical modeling, machine learning, dashboards, regression analysis, sports analytics, data storytelling, hypothesis testing, XGBoost, DuckDB, React, Next.js, TypeScript, Java, C, Git/GitHub, Vercel.
+Design: Figma, UX design, high-fidelity prototyping, wireframing, competitive UX analysis, design systems.
 
 PERSONAL:
 Noah is from Los Angeles (loves it, though not the traffic) and goes to school upstate at Skidmore College in New York. Outside of school and work, he enjoys hiking, racquet sports, board and card games, and cooking. He'd want a recruiter to know he's strong at leading a group to get things done, and works well with others, accommodating different people's needs on a team. His parents were both hard-working and dedicated in their careers, and he carries that same work ethic. When learning something new, he believes in starting slow and nailing the basics before diving in hands-on. During his time in Barcelona, he came to love the slower, more relaxed pace of life and how easy and useful the public transportation is. Looking ahead, he wants a career that involves working closely with other people and that's meaningful and genuinely engaging to think about. He's especially excited to keep growing his knowledge in AI, data storytelling, and design practices.

@@ -409,6 +409,37 @@ p { margin: 0 0 1em; }
 
 .project-card:nth-of-type(even) .project-media { order: 2; }
 
+.project-more { margin-top: 26px; }
+
+.project-more > summary {
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.25s ease, color 0.25s ease;
+}
+
+.project-more > summary::-webkit-details-marker { display: none; }
+
+.project-more > summary::after { content: '↓'; }
+.project-more[open] > summary::after { content: '↑'; }
+
+.project-more:not([open]) .when-open,
+.project-more[open] .when-closed { display: none; }
+
+@media (hover: hover) and (pointer: fine) {
+  .project-more > summary:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: var(--shadow); }
+}
+
 .project-media {
   border-radius: var(--radius-md);
   overflow: hidden;
