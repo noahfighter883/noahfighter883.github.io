@@ -1,3 +1,5 @@
+const { logEvent, clip } = require('./_log');
+
 const ALLOWED_ORIGIN = 'https://noahfighter883.github.io';
 const MODEL = 'claude-haiku-4-5-20251001';
 const MAX_MESSAGES = 20;
@@ -72,8 +74,14 @@ module.exports = async function handler(req, res) {
   }
 
   const lastUserMessage = cleanMessages.filter((m) => m.role === 'user').pop();
+  let logDone = Promise.resolve();
   if (lastUserMessage) {
     console.log('Chat question:', lastUserMessage.content);
+    logDone = logEvent({
+      type: 'chat',
+      question: clip(lastUserMessage.content, 2000),
+      country: clip(req.headers['x-vercel-ip-country'], 4),
+    });
   }
 
   try {
@@ -105,5 +113,7 @@ module.exports = async function handler(req, res) {
   } catch (err) {
     console.error('Chat function error', err);
     res.status(500).json({ error: 'Server error' });
+  } finally {
+    await logDone;
   }
 };

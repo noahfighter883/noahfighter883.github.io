@@ -213,3 +213,35 @@
       });
   });
 })();
+
+(function () {
+  var LOG_ENDPOINT = 'https://noahfighter883-github-io.vercel.app/api/log';
+
+  if (/^(localhost|127\.|0\.0\.0\.0)/.test(location.hostname)) return;
+
+  try {
+    if (location.search.indexOf('notrack') !== -1) localStorage.setItem('notrack', '1');
+    if (localStorage.getItem('notrack') === '1') return;
+    if (sessionStorage.getItem('counted')) return;
+    sessionStorage.setItem('counted', '1');
+  } catch (err) {}
+
+  var referrer = '';
+  try {
+    referrer = document.referrer ? new URL(document.referrer).hostname : '';
+  } catch (err) {}
+
+  var body = JSON.stringify({
+    path: location.pathname,
+    host: location.hostname,
+    referrer: referrer,
+    mobile: window.matchMedia('(max-width: 760px)').matches,
+    lang: navigator.language
+  });
+
+  if (navigator.sendBeacon) {
+    navigator.sendBeacon(LOG_ENDPOINT, new Blob([body], { type: 'text/plain' }));
+  } else {
+    fetch(LOG_ENDPOINT, { method: 'POST', body: body, keepalive: true, headers: { 'content-type': 'text/plain' } });
+  }
+})();

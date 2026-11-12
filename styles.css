@@ -824,6 +824,14 @@ p { margin: 0 0 1em; }
 
 .chat-input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
+.chat-note {
+  margin: 0;
+  padding: 0 14px 10px;
+  color: var(--muted);
+  font-size: 0.74rem;
+  line-height: 1.4;
+}
+
 .chat-send {
   width: 38px;
   height: 38px;
