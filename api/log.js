@@ -5,6 +5,7 @@ const ALLOWED_ORIGINS = [
   'https://noahfighter883-github-io.vercel.app',
 ];
 const BOT_PATTERN = /bot|crawl|spider|preview|slurp|headless|monitor/i;
+const HOST_PATTERN = /^[A-Za-z0-9.-]*$/;
 
 module.exports = async function handler(req, res) {
   const origin = req.headers.origin || '';
@@ -34,13 +35,23 @@ module.exports = async function handler(req, res) {
   }
   data = data || {};
 
+  const path = clip(data.path, 100);
+  const referrer = clip(data.referrer, 100);
+  const host = clip(data.host, 100);
+  const lang = clip(data.lang, 20);
+
+  if (!/^[\w\-./%~]*$/.test(path) || !HOST_PATTERN.test(referrer) || !HOST_PATTERN.test(host) || !/^[A-Za-z-]*$/.test(lang)) {
+    res.status(204).end();
+    return;
+  }
+
   await logEvent({
     type: 'view',
-    path: clip(data.path, 100),
-    referrer: clip(data.referrer, 100),
-    host: clip(data.host, 100),
+    path,
+    referrer,
+    host,
     device: data.mobile ? 'mobile' : 'desktop',
-    lang: clip(data.lang, 20),
+    lang,
     country: clip(req.headers['x-vercel-ip-country'], 4),
   });
 

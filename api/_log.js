@@ -1,5 +1,7 @@
 function clip(value, max) {
-  return String(value == null ? '' : value).slice(0, max);
+  return String(value == null ? '' : value)
+    .replace(/[\u0000-\u001f\u007f]+/g, ' ')
+    .slice(0, max);
 }
 
 async function logEvent(event) {
